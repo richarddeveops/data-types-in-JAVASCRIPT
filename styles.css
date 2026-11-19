@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=DM+Mono:wght@400;500&display=swap");
+
+* { box-sizing: border-box; }
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    color: #102c37;
+    background: #cfe8e7;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.lesson-sheet {
+    width: min(100%, 980px);
+    min-height: 430px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    align-content: center;
+    column-gap: 48px;
+    padding: clamp(30px, 8vw, 76px);
+    border: 1px solid #7dafaf;
+    background: #e2f2ef;
+}
+
+.eyebrow {
+    margin: 0 0 18px;
+    color: #147d78;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    grid-column: 1;
+    font: 700 clamp(3.2rem, 10vw, 6.4rem)/.88 "Bricolage Grotesque", sans-serif;
+    letter-spacing: -.085em;
+}
+
+.lesson-sheet > p:not(.eyebrow):not(.console-note) {
+    grid-column: 1;
+    margin: 18px 0 32px;
+    color: #45636a;
+    line-height: 1.7;
+}
+
+.console-note {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    align-self: end;
+    width: 100%;
+    margin: 0;
+    padding: 18px 14px;
+    border-left: 2px solid #147d78;
+    background: #c2e1de;
+    color: #102c37;
+    font: .68rem "DM Mono", monospace;
+}
+
+@media (max-width: 600px) {
+    .lesson-sheet { grid-template-columns: 1fr; }
+    .console-note { grid-column: 1; grid-row: auto; margin-top: 15px; }
+}
